@@ -9,4 +9,25 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <servlet> 
+  <servlet-name>attexconsumer</servlet-name> 
+  <display-name>attexconsumer</display-name> 
+  <description/> 
+  <servlet-class>attex.AttexConsumer</servlet-class> 
+  </servlet>
+  <servlet> 
+      <servlet-name>AttexConsumer</servlet-name> 
+      <display-name>AttexConsumer</display-name> 
+      <description/> 
+      <servlet-class>attex.AttexConsumer</servlet-class> 
+      </servlet>
+      <servlet-mapping> 
+          <servlet-name>attexconsumer</servlet-name> 
+          <url-pattern>/attexconsumer</url-pattern> 
+      </servlet-mapping>
+          <servlet-mapping> 
+          <servlet-name>AttexConsumer</servlet-name> 
+          <url-pattern>/AttexConsumer</url-pattern> 
+       </servlet-mapping>
 </web-app>
