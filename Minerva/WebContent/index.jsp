@@ -6,9 +6,9 @@
 <title>Project:Minerva</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <meta name="generator" content="Eclipse Juno" />
-<meta name="author" content="dj" />
+<meta name="author" content="" />
 <link rel="shortcut icon" href="" />
-<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
 <script src="js/bootstrap.js"></script>
 <%
 String contentPage = request.getParameter("page");
