@@ -75,7 +75,7 @@ BODY {
 		<%@ include file="home.jsp" %>
 <%	}
 	if (contentPage.equals("topics")) {%>
-		<%@ include file="topic_chooser.html" %>
+		<%@ include file="topic_chooser.jsp" %>
 <%	}
 	if (contentPage.equals("news")) {%>
 		<%@ include file="news.jsp" %>
