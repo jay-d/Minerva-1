@@ -2,7 +2,7 @@ package Connection;
 
 //public class SqlConnector {
 //	
-//	public Create(Object object) {
+//	public create(Object object) {
 //		SessionFactory sessionFactory = config.buildSessionFactory(); //fjernes senere nå vi lager hibernate klasse
 //		Session session = sessionFactory.getCurrentSession();
 //		//Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -12,7 +12,16 @@ package Connection;
 //	    session.getTransaction().commit();
 //	}
 //	
-//	public Update(Object object) {
+//	public update(Object object) {
+//
+//}
+//	public insert(Object object) {
+//
+//}
+//	public get(Object object) {
+//
+//}
+//	public delete(Object object) {
 //
 //}
 //}
