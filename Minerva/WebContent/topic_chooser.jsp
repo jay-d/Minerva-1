@@ -6,10 +6,13 @@
 
 
 <script src="js/jquery-1.8.2.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+
 
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/bootstrap-responsive.css" rel="stylesheet">
+<
 
 </head>
 
