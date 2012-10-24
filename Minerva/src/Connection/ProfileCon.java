@@ -3,6 +3,7 @@ package Connection;
 import java.sql.*;
 
 import tables.*;
+import org.hibernate.Session;
 
 public class ProfileCon {
 	private static String location1 = "jdbc:mysql://localhost/databaseeksempler_2011";
