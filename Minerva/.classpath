@@ -13,6 +13,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/Andy/Downloads/openid4java-0.9.6.662/openid4java-0.9.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Andy/Dropbox/Minerva/OpenID/JAR-filer/openid4java-0.9.6.662/openid4java-0.9.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Andy/Dropbox/Minerva/OpenID/JAR-filer/openid4java-0.9.6.662/lib/optional/log4j-1.2.8.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
