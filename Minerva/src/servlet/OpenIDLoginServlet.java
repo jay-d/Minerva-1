@@ -25,7 +25,7 @@ import org.openid4java.message.ax.FetchResponse;
 /**
  * Servlet implementation class AttexConsumer
  */
-public class AttexConsumer extends HttpServlet {
+public class OpenIDLoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private ConsumerManager manager = null;
