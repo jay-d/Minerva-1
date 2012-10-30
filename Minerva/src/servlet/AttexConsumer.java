@@ -49,8 +49,7 @@ public class AttexConsumer extends HttpServlet {
 			IOException {
 
 		// Check if the POST is from the OP
-		if (httpRequest.getParameter("is_id_res") != null
-				&& httpRequest.getParameter("is_id_res").equals("true")) {
+		if (httpRequest.getParameter("is_id_res") != null && httpRequest.getParameter("is_id_res").equals("true")) {
 
 			try {
 				// Getting all parameters in request including AuthResponse
@@ -58,29 +57,24 @@ public class AttexConsumer extends HttpServlet {
 						httpRequest.getParameterMap());
 
 				// Previously discovered information
-				DiscoveryInformation discovered = (DiscoveryInformation) httpRequest
-						.getSession().getAttribute("openid-disc");
+				DiscoveryInformation discovered = (DiscoveryInformation) httpRequest.getSession().getAttribute("openid-disc");
 
 				// Verify return-to, discoveries, nonce & signature
 				// Signature will be verified using the shared secrete
-				VerificationResult verificationResult = manager
-						.verify(receivingUrl.toString(), authResponseParams,
-								discovered);
+				VerificationResult verificationResult = manager.verify(receivingUrl.toString(), authResponseParams, discovered);
 
 				Identifier verified = verificationResult.getVerifiedId();
 
 				// Identifier will be NULL if verification failed
 				if (verified != null) {
-					AuthSuccess authSuccess = (AuthSuccess) verificationResult
-							.getAuthResponse();
+					AuthSuccess authSuccess = (AuthSuccess) verificationResult.getAuthResponse();
 
 					String verifiedID = authSuccess.getIdentity();
 					String email, firstname, lastname, country, language;
 
 					// Trying to get email attribute using AX extension
 					if (authSuccess.hasExtension(AxMessage.OPENID_NS_AX)) {
-						FetchResponse fetchResp = (FetchResponse) authSuccess
-								.getExtension(AxMessage.OPENID_NS_AX);
+						FetchResponse fetchResp = (FetchResponse) authSuccess.getExtension(AxMessage.OPENID_NS_AX);
 
 						email = fetchResp.getAttributeValue("email");
 						firstname = fetchResp.getAttributeValue("firstname");
