@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Topic chooser</title>
-
-
 <script src="js/jquery-1.8.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
@@ -12,14 +5,14 @@
 
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/bootstrap-responsive.css" rel="stylesheet">
-<
 
-</head>
+
+
 
 <body>
 	<br>
 	<br>
-	<div class ="span6"  id="MainMenu" >
+	<div class ="span3"  id="MainMenu" >
 		<div class="accordion-group">
 			
 			<!-- Web Development-->
@@ -87,13 +80,3 @@
 			</div>
 		</div>
 	</div>
-
-
-	
-
-
-
-	
-
-</body>
-</html>
