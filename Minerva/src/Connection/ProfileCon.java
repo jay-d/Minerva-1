@@ -13,9 +13,7 @@
 //	public static void createUser(String email, int thirdPartId) {
 //
 //
-//		SessionFactory sessionFactory = config.buildSessionFactory();
-//		Session session = sessionFactory.getCurrentSession();
-//		//Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+//		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 //		session.beginTransaction();
 //
 //		User user = new User();
@@ -30,9 +28,7 @@
 //	public Profile getProfile(int id) {
 //
 //
-//		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-//		Session session = sessionFactory.openSession();
-//		//Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+//		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 //		session.beginTransaction();
 //
 //
@@ -48,9 +44,7 @@
 //
 //		Profile profile = null;
 //
-//		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-//		Session session = sessionFactory.openSession();
-//		//Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+//		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 //		session.beginTransaction();
 //
 //		profile = (Profile) session.get(Profile.class, id);
@@ -81,5 +75,5 @@
 //
 //		return true;
 //	}
-//}
+//} 
 //

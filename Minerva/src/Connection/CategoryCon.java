@@ -9,7 +9,7 @@
 //import java.util.List;
 //import org.hibernate.Session;
 //
-//public class MainCategoryCon {
+//public class CategoryCon {
 //	
 //	private static String location1 = "jdbc:mysql://localhost/databaseeksempler_2011";
 //	private static String location2 = "root";
@@ -17,12 +17,11 @@
 //
 //public List<MainCategory> getMainCategories() {
 //	
-//	SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-//	Session session = sessionFactory.openSession();
-//	//Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+//	
+//	Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 //    session.beginTransaction();
 //
-//    List<MainCategory> result = session.createQuery("from main_category").list();
+//    List<MainCategory> result = session.createQuery("from MainCategory").list();
 //
 //    session.getTransaction().commit();
 //    session.close();
@@ -30,6 +29,17 @@
 //    return result;
 //		
 //	}
+//
+//public List<SubCategory> getSubCategories(int mainCategory) {
+//	Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+//    session.beginTransaction();
+//
+//    List<SubCategory> result = session.createQuery("from SubCategory where").list();
+//
+//    session.getTransaction().commit();
+//    session.close();
+//
+//    return result;
 //}
-//hei
-//aojda
+//}
+//
