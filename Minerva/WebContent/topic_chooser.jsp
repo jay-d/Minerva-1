@@ -8,8 +8,6 @@
 
 
 
-
-<body>
 	<br>
 	<br>
 	<div class ="span3"  id="MainMenu" >
@@ -23,7 +21,7 @@
 			</div>
 			<div id="WebDevelopment" class="accordion-body collapse">
 				<div class="accordion-inner">
-					<a href=#>HTML</a> <br> 
+					<a href=chosen_webdevelopment_subtopic_html.jsp>HTML</a> <br> 
 					<a href=#>Javascript</a> <br> 
 					<a href=#>PHP</a> <br>
 				</div>
