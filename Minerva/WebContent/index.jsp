@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+<%--@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"--%>
 <html lang="no">
 <head>
 <title>Project:Minerva</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <meta name="generator" content="Eclipse Juno" />
-<meta name="author" content="" />
+<meta name="author" content="dj" />
 <link rel="shortcut icon" href="" />
 <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
 <script src="js/bootstrap.js"></script>
@@ -25,26 +27,36 @@ BODY {
 }
 </style>
 <body>
-<div class="container">
+<div class="container"><!-- begin CONTAINER -->
 
-<%--	Header + login field	--%>
-  <div class="row">
-	<div class="span9">
-	  <a href="./"><img src="logo.png" style="width:50%;height:50%" /></a>
-	</div>
-	<div class="span3">
-	  <form class="well">
-	  <input type="text" class="span2" placeholder="Brukernavn" /><br />
-	  <input type="password" class="span2" placeholder="Passord" /><br />
-	  <div class="btn-group">
-	    <button class="btn btn-primary btn-small">Logg inn</button>
-	  </div>
-	  </form>
-	</div>
-  </div>
+	<%--	Header + login field	--%>
+	<div class="row"><!-- begin ROW -->
+		<div class="span8">
+			<a href="./"><img src="logo.png" style="width:50%;height:50%" /></a>
+		</div>
+		<div class="span1">
+			<div class="btn-group">
+				<a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">
+					<img alt="gb" src="img/gb.png" />&nbsp;<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a tabindex="-1" href="#"><img alt="no" src="img/no.png" />&nbsp;Norsk</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="span3">
+			<form class="well">
+				<input type="text" class="span2" placeholder="Brukernavn" /><br />
+				<input type="password" class="span2" placeholder="Passord" /><br />
+				<div class="btn-group">
+				<button class="btn btn-primary btn-small">Logg inn</button>
+				</div>
+			</form>
+		</div>
+	</div><!-- end ROW -->
   
   <%--	Navigation	--%>
-  <div class="row">
+  <div class="row"><!-- begin ROW -->
     	<div class="span12">
 			<div class="navbar nav-tabs navbar-static-top"><div class="navbar-inner">
 				<ul class="nav">
@@ -70,9 +82,10 @@ BODY {
 				</ul>
 			</div></div>
     	</div>
-  </div>
+  </div><!-- end ROW -->
   
-<% // Include page content files
+<%	/* Include page content files
+	(also experiments with different types of include conventions) */
 	if (contentPage.equals("home")) {%>
 		<%@ include file="home.jsp" %>
 <%	}
@@ -89,6 +102,6 @@ BODY {
 		<jsp:include page="info.jsp" />
 <%	} %>
 
-</div>
+</div><!-- end CONTAINER -->
 </body>
 </html>
