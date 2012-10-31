@@ -1,14 +1,21 @@
 package tables;
 
 import java.awt.Image;
+import java.util.List;
 
+@Entity
 public class Profile {
+//	@GeneratedValue (strategy=GenerationType.TABLE, generator="userid")
+	@id
+	@GenericGenerator(name = "generator", strategy = "increment") 
+    @GeneratedValue(generator = "generator")
 	private long userId;
 //	private Image image;
 	private String information;
 	private String location;
 	private String lastName;
 	private String firstName;
+	private List<User> users;
 
 	public Profile() {
 	}
@@ -59,5 +66,9 @@ public class Profile {
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
+	}
+	@OneToMany(targetEntity=User.class, mappedBy="profile")
+	public List<User> getUsers() {
+		return users;
 	}
 }
