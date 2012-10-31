@@ -16,7 +16,7 @@ public class ProfileTest {
 		config.addAnnotatedClass(Profile.class);
 		config.configure("hibernate.cfg.xml");
 		
-//		new SchemaExport(config).create(true, true);
+		new SchemaExport(config).create(true, true);
 		
 		SessionFactory factory = config.buildSessionFactory();
 		Session session = factory.getCurrentSession();

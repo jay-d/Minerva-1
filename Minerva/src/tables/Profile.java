@@ -3,7 +3,9 @@ package tables;
 import java.awt.Image;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -22,6 +24,8 @@ public class Profile {
 	private String location;
 	private String lastName;
 	private String firstName;
+	
+	@OneToMany(targetEntity=User.class, mappedBy="profile", cascade=CascadeType.REMOVE, fetch=FetchType.LAZY)
 	private List<User> users;
 
 	public Profile() {
@@ -72,7 +76,7 @@ public class Profile {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	@OneToMany(targetEntity=User.class, mappedBy="profile")
+	
 	public List<User> getUsers() {
 		return users;
 	}

@@ -33,6 +33,8 @@
         <!-- <property name="hbm2ddl.auto">create</property> 
 
         <mapping resource="sql/Profile.hbm.xml"/>-->
+        <mapping class="tables.User"/>
+        <mapping class="tables.Profile"/>
 
     </session-factory>
 
