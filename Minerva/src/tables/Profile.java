@@ -30,9 +30,7 @@ public class Profile {
 		return userId;
 	}
 
-	private void setUserId(long userId) {
-		this.userId = userId;
-	}
+	
 
 //	public Image getImage() {
 //		return image;

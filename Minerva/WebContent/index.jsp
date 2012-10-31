@@ -6,9 +6,9 @@
 <title>Project:Minerva</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <meta name="generator" content="Eclipse Juno" />
-<meta name="author" content="dj" />
+<meta name="author" content="" />
 <link rel="shortcut icon" href="" />
-<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
 <script src="js/bootstrap.js"></script>
 <%
 String contentPage = request.getParameter("page");
@@ -16,6 +16,8 @@ if (contentPage == "" || contentPage == null) {
 	contentPage = "home";
 }
 %>
+
+
 </head>
 <style type="text/css">
 BODY {
@@ -44,7 +46,7 @@ BODY {
   <%--	Navigation	--%>
   <div class="row">
     	<div class="span12">
-			<!--  <div class="navbar nav-tabs navbar-static-top"><div class="navbar-inner">-->
+			<div class="navbar nav-tabs navbar-static-top"><div class="navbar-inner">
 				<ul class="nav">
 				 <li<%if(contentPage.equals("home"))out.print(" class=\"active\"");%>>
 				 	<a href="./"><i class="icon-home"></i>&nbsp;Hjem</a>
@@ -66,7 +68,7 @@ BODY {
 				 	<a href="?page=info"><i class="icon-asterisk"></i>&nbsp;Informasjon</a>
 				 </li>
 				</ul>
-			<!--  </div></div>-->
+			</div></div>
     	</div>
   </div>
   
@@ -75,7 +77,7 @@ BODY {
 		<%@ include file="home.jsp" %>
 <%	}
 	if (contentPage.equals("topics")) {%>
-		<%@ include file="topic_chooser.html" %>
+		<%@ include file="topic_chooser.jsp" %>
 <%	}
 	if (contentPage.equals("news")) {%>
 		<%@ include file="news.jsp" %>
