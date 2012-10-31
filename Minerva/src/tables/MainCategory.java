@@ -16,6 +16,8 @@ public class MainCategory {
     @GeneratedValue(generator = "generator")
 	private long id;
 	private String name;
+	
+	@OneToMany(targetEntity=SubCategory.class, mappedBy="mainCategory")
 	private List<SubCategory> subCategories;
 
 	
@@ -35,7 +37,7 @@ public class MainCategory {
 	public void setName(String name) {
 		this.name = name;
 	}
-	@OneToMany(targetEntity=SubCategory.class, mappedBy="mainCategory")
+	
 	public List<SubCategory> getSubCategories() {
 		return subCategories;
 	}

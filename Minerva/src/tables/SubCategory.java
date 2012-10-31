@@ -16,6 +16,9 @@ public class SubCategory {
     @GeneratedValue(generator = "generator")
 	private long id;
 	private String name;
+	
+	@ManyToOne
+	@JoinColumn(name="mainCategoryID")
 	private MainCategory mainCategory;
 
 	
@@ -38,8 +41,7 @@ public class SubCategory {
 	public void setName(String name) {
 		this.name = name;
 	}
-	@ManyToOne
-	@JoinColumn(name="mainCategoryID")
+	
 	public MainCategory getMainCategory() {
 		return mainCategory;
 	}
