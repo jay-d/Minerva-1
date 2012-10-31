@@ -27,21 +27,31 @@ BODY {
 <body>
 <div class="container"><!-- begin CONTAINER -->
 
-<%--	Header + login field	--%>
-  <div class="row"><!-- begin ROW -->
-	<div class="span9">
-	  <a href="./"><img src="logo.png" style="width:50%;height:50%" /></a>
-	</div>
-	<div class="span3">
-	  <form class="well">
-	  <input type="text" class="span2" placeholder="Brukernavn" /><br />
-	  <input type="password" class="span2" placeholder="Passord" /><br />
-	  <div class="btn-group">
-	    <button class="btn btn-primary btn-small">Logg inn</button>
-	  </div>
-	  </form>
-	</div>
-  </div><!-- end ROW -->
+	<%--	Header + login field	--%>
+	<div class="row"><!-- begin ROW -->
+		<div class="span8">
+			<a href="./"><img src="logo.png" style="width:50%;height:50%" /></a>
+		</div>
+		<div class="span1">
+			<div class="btn-group">
+				<a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">
+					<img alt="gb" src="img/gb.png" />&nbsp;<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a tabindex="-1" href="#"><img alt="no" src="img/no.png" />&nbsp;Norsk</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="span3">
+			<form class="well">
+				<input type="text" class="span2" placeholder="Brukernavn" /><br />
+				<input type="password" class="span2" placeholder="Passord" /><br />
+				<div class="btn-group">
+				<button class="btn btn-primary btn-small">Logg inn</button>
+				</div>
+			</form>
+		</div>
+	</div><!-- end ROW -->
   
   <%--	Navigation	--%>
   <div class="row"><!-- begin ROW -->
