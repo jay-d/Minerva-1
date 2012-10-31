@@ -23,4 +23,8 @@
 				<p><%= LangEng.homeUpdate1Text %></p>
 				<li class="divider"></li>
 			</ul>
+
 		</div>
+
+		</div>
+	</div>
