@@ -17,6 +17,9 @@ public class User {
     @GeneratedValue(generator = "generator")
 	private long id;
 	private String email;
+	
+	@ManyToOne
+	@JoinColumn(name="profileID")
 	private Profile profile;
 
 	public User() {
@@ -45,8 +48,7 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	@ManyToOne
-	@JoinColumn(name="profileID")
+	
 	public Profile getProfile() {
 		return profile;
 	}
