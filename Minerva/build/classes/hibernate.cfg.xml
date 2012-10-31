@@ -35,6 +35,8 @@
         <mapping resource="sql/Profile.hbm.xml"/>-->
         <mapping class="tables.User"/>
         <mapping class="tables.Profile"/>
+        <mapping class="tables.MainCategory"/>
+        <mapping class="tables.SubCategory"/>
 
     </session-factory>
 
