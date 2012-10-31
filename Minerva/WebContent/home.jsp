@@ -1,4 +1,3 @@
-
 	<%@ page import = "lang.LangEng" %>
 	
 	<div class="container">
@@ -34,5 +33,4 @@
 		</ul>
 
 
-	</div>
 	</div>
