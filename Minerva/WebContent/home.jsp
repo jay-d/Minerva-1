@@ -1,4 +1,3 @@
-
 	<%@ page import = "lang.LangEng" %>
 	
 	<div class="container">
@@ -16,23 +15,16 @@
 			</div>
 
 		</div>
-		<ul class="nav nav-list" class="span6">
+		<div class="row">
+			<ul class="nav nav-list">
+				<h4><%= LangEng.homeUpdate2Header %></h4>
+				<p><%= LangEng.homeUpdate2Text %></p>
 
-		
-			<h4><%= LangEng.homeUpdate2Header %></h4>
-			<p><%= LangEng.homeUpdate2Text %></p>
+				<li class="divider"></li>
 
-			<li class="divider"></li>
-
-
-
-			<h4><%= LangEng.homeUpdate1Header %></h4>
-			<p><%= LangEng.homeUpdate1Text %></p>
-			<li class="divider"></li>
-
-
-		</ul>
-
-
-	</div>
+				<h4><%= LangEng.homeUpdate1Header %></h4>
+				<p><%= LangEng.homeUpdate1Text %></p>
+				<li class="divider"></li>
+			</ul>
+		</div>
 	</div>
