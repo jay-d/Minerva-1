@@ -2,11 +2,17 @@ package tables;
 
 import java.awt.Image;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Profile {
 //	@GeneratedValue (strategy=GenerationType.TABLE, generator="userid")
-	@id
+	@Id
 	@GenericGenerator(name = "generator", strategy = "increment") 
     @GeneratedValue(generator = "generator")
 	private long userId;

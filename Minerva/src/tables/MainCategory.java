@@ -2,9 +2,16 @@ package tables;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 public class MainCategory {
-	@id
+	@Id
 	@GenericGenerator(name = "generator", strategy = "increment") 
     @GeneratedValue(generator = "generator")
 	private long id;
@@ -20,9 +27,6 @@ public class MainCategory {
 		return id;
 	}
 
-	private void setId(long id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;

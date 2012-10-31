@@ -1,9 +1,18 @@
 package tables;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 public class User {
 	private long thirdPartId;
-	@id
+	@Id
 	@GenericGenerator(name = "generator", strategy = "increment") 
     @GeneratedValue(generator = "generator")
 	private long id;
