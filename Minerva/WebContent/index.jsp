@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+<%--@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"--%>
 <html lang="no">
 <head>
 <title>Project:Minerva</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <meta name="generator" content="Eclipse Juno" />
-<meta name="author" content="" />
+<meta name="author" content="dj" />
 <link rel="shortcut icon" href="" />
 <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
 <script src="js/bootstrap.js"></script>
@@ -23,10 +25,10 @@ BODY {
 }
 </style>
 <body>
-<div class="container">
+<div class="container"><!-- begin CONTAINER -->
 
 <%--	Header + login field	--%>
-  <div class="row">
+  <div class="row"><!-- begin ROW -->
 	<div class="span9">
 	  <a href="./"><img src="logo.png" style="width:50%;height:50%" /></a>
 	</div>
@@ -39,10 +41,10 @@ BODY {
 	  </div>
 	  </form>
 	</div>
-  </div>
+  </div><!-- end ROW -->
   
   <%--	Navigation	--%>
-  <div class="row">
+  <div class="row"><!-- begin ROW -->
     	<div class="span12">
 			<div class="navbar nav-tabs navbar-static-top"><div class="navbar-inner">
 				<ul class="nav">
@@ -68,9 +70,10 @@ BODY {
 				</ul>
 			</div></div>
     	</div>
-  </div>
+  </div><!-- end ROW -->
   
-<% // Include page content files
+<%	/* Include page content files
+	(also experiments with different types of include conventions) */
 	if (contentPage.equals("home")) {%>
 		<%@ include file="home.jsp" %>
 <%	}
@@ -87,6 +90,6 @@ BODY {
 		<jsp:include page="info.jsp" />
 <%	} %>
 
-</div>
+</div><!-- end CONTAINER -->
 </body>
 </html>
