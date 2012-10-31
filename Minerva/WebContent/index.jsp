@@ -18,6 +18,8 @@ if (contentPage == "" || contentPage == null) {
 	contentPage = "home";
 }
 %>
+
+
 </head>
 <style type="text/css">
 BODY {
