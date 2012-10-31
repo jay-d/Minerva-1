@@ -32,7 +32,7 @@ BODY {
 	<%--	Header + login field	--%>
 	<div class="row"><!-- begin ROW -->
 		<div class="span8">
-			<a href="./"><img src="logo.png" style="width:50%;height:50%" /></a>
+			<a href="./"><img src="img/logo.png" style="width:50%;height:50%" /></a>
 		</div>
 		<div class="span1">
 			<div class="btn-group">
