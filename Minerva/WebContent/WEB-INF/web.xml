@@ -5,11 +5,15 @@
     <welcome-file>index.jsp</welcome-file>  
   </welcome-file-list>
   
+  <session-config>
+      <session-timeout>30</session-timeout> <!-- in minutes -->
+  </session-config>
+  
   <servlet>
   	<servlet-name>openidlogin</servlet-name>
-  	
   	<servlet-class>servlet.OpenIDLoginServlet</servlet-class>
   </servlet>
+  
   <servlet-mapping>
   	<servlet-name>openidlogin</servlet-name>
   	<url-pattern>/openidlogin</url-pattern>

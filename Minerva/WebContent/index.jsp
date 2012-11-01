@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page	import="java.sql.*, java.io.*, java.util.*" language="java"
+			contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"
+			session="true"	%>
 <!DOCTYPE html>
 <%--@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"--%>
@@ -17,9 +18,27 @@ String contentPage = request.getParameter("page");
 if (contentPage == "" || contentPage == null) {
 	contentPage = "home";
 }
+
+// Session handling
+String sessionID = session.getId();
+
+// Connect to local MySQL-server
+String	SQL_USERNAME = "root",
+		SQL_PASSWORD = "test1234",
+		SQL_DATABASE = "minerva";
+String connectionURL = "jdbc:mysql://localhost:3306/"+ SQL_DATABASE;
+try {
+	Connection connection = DriverManager.getConnection(
+			connectionURL, SQL_USERNAME, SQL_PASSWORD);
+	if (!connection.isClosed()) {
+//		out.print("<script>alert(\"Connected to "+ connectionURL +"\")</script>");
+		session.setAttribute("sql_connection", connection);
+	}
+}
+catch (Exception e) {
+	out.print("<script>alert(\"Unable to connect.\")</script>");
+}
 %>
-
-
 </head>
 <style type="text/css">
 BODY {
