@@ -11,10 +11,10 @@ public class CreateInserts {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println("Dette funke isje");
-		createSubCategories();
+	
+		createMainCategories();
 	}
-
+	
 	private static void createUsers() {
 		ProfileCon.createUser("test45", 567);
 
@@ -30,6 +30,7 @@ public class CreateInserts {
 		CategoryCon.createSubCategory("Java", 2);
 		CategoryCon.createSubCategory("TCP", 3);
 		CategoryCon.createSubCategory("tull", 4);
+		CategoryCon.createSubCategory("Programmering", 4);
 	}
 
 	public static void createProfilesEkstra(){
