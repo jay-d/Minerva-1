@@ -23,8 +23,8 @@ import org.openid4java.message.ax.FetchRequest;
 import org.openid4java.message.ax.FetchResponse;
 
 import Connection.ProfileCon;
-
 import tables.User;
+import org.hibernate.Session;
 
 /**
  * Servlet implementation class AttexConsumer
@@ -91,17 +91,17 @@ public class OpenIDLoginServlet extends HttpServlet {
 						List<User> users = ProfileCon.getListOfUsersInDatabase();
 						boolean userExistsInDB = false;
 						
-						for (int i=0; i<users.size(); i++) {
-							if (users.get(i).getEmail().equals(email) && users.get(i).getEmail() != null) {
-								//login stuff happens here
-								userExistsInDB = true;
-							}
-						}
-						
-						if (!userExistsInDB) {
-							//store the new user in DB
-							ProfileCon.createUser(email, 123578);
-						}
+//						for (int i=0; i<users.size(); i++) {
+//							if (users.get(i).getEmail().equals(email) && users.get(i).getEmail() != null) {
+//								//login stuff happens here
+//								userExistsInDB = true;
+//							}
+//						}
+//						
+//						if (!userExistsInDB) {
+//							//store the new user in DB
+//							ProfileCon.createUser(email, 123578);
+//						}
 
 
 
