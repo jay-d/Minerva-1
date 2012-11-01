@@ -81,6 +81,11 @@ public class OpenIDLoginServlet extends HttpServlet {
 						lastname = fetchResp.getAttributeValue("lastname");
 						country = fetchResp.getAttributeValue("country");
 						language = fetchResp.getAttributeValue("language");
+						
+						// Checks if the e-mail exists in the User-table, i.e. if the user
+						// is logging in for the first time. If so, creates a new user.
+						
+						
 
 						// Sending results to index.jsp
 						httpResponse.sendRedirect("out.jsp?openid=" + verifiedID
