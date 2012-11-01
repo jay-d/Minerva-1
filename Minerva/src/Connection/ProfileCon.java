@@ -8,9 +8,11 @@ import tables.*;
 public class ProfileCon {
 	
 
-	// sjekker om epost er brukt tidligere en annen gang
+	// lager en user og en profli til brukeren
+	// går forløpig utifra at hver profil bare har en bruker
 	public static void createUser(String email, int thirdPartId) {
 
+		Profile profile = createProfile("from user2", "LastName", "Location", "Information");
 
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
@@ -18,6 +20,7 @@ public class ProfileCon {
 		User user = new User();
 		user.setEmail(email);
 		user.setThirdPartId(thirdPartId);
+		user.setProfile(profile);
 
 		session.save(user);
 		session.getTransaction().commit();
@@ -32,7 +35,7 @@ public class ProfileCon {
 
 
 		Profile profile = (Profile) session.get(Profile.class, id);
-		session.getTransaction().commit();  // vet ikke om vi trenger den her
+		session.getTransaction().commit();  
 		session.close();
 
 		return profile;
@@ -66,13 +69,32 @@ public class ProfileCon {
 
 		session.update(profile);
 
-		session.getTransaction().commit();  // vet ikke om vi trenger den her
+		session.getTransaction().commit(); 
 		session.close();
 
-		session.getTransaction().commit();
-		session.close();
-
+	
 		return true;
+	}
+	
+	public static Profile createProfile(String FirstName, String LastName, String Location, String Information) {
+
+
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+
+		Profile profile = new Profile();
+
+		
+			profile.setFirstName(FirstName);
+			profile.setLastName(LastName);
+			profile.setLocation(Location);
+			profile.setInformation(Information);
+
+		session.save(profile);
+
+		session.getTransaction().commit();  
+
+		return profile;
 	}
 } 
 
