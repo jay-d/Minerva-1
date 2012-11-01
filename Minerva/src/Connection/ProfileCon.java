@@ -1,6 +1,7 @@
 package Connection;
 
 import java.sql.*;
+import java.util.List;
 
 import org.hibernate.Session;
 import tables.*;
@@ -96,5 +97,17 @@ public class ProfileCon {
 
 		return profile;
 	}
+	
+	public static List<User> getListOfUsersInDatabase() {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+
+		List<User> users = session.createQuery("from user").list();
+		session.getTransaction().commit();  
+		
+
+		return users;
+	}
+	
 } 
 

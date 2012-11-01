@@ -22,6 +22,10 @@ import org.openid4java.message.ax.AxMessage;
 import org.openid4java.message.ax.FetchRequest;
 import org.openid4java.message.ax.FetchResponse;
 
+import Connection.ProfileCon;
+
+import tables.User;
+
 /**
  * Servlet implementation class AttexConsumer
  */
@@ -81,11 +85,25 @@ public class OpenIDLoginServlet extends HttpServlet {
 						lastname = fetchResp.getAttributeValue("lastname");
 						country = fetchResp.getAttributeValue("country");
 						language = fetchResp.getAttributeValue("language");
-						
+
 						// Checks if the e-mail exists in the User-table, i.e. if the user
 						// is logging in for the first time. If so, creates a new user.
+						List<User> users = ProfileCon.getListOfUsersInDatabase();
+						boolean userExistsInDB = false;
 						
+						for (int i=0; i<users.size(); i++) {
+							if (users.get(i).getEmail().equals(email) && users.get(i).getEmail() != null) {
+								//login stuff happens here
+								userExistsInDB = true;
+							}
+						}
 						
+						if (!userExistsInDB) {
+							//store the new user in DB
+							ProfileCon.createUser(email, 123578);
+						}
+
+
 
 						// Sending results to index.jsp
 						httpResponse.sendRedirect("out.jsp?openid=" + verifiedID
