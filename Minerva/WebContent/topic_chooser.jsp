@@ -1,5 +1,5 @@
 <%
-session.getAttribute("sql_connection");
+
 %>
 	<br>
 	<br>
