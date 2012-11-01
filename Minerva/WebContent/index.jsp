@@ -35,21 +35,15 @@ BODY {
 			<a href="./"><img src="img/logo.png" style="width:50%;height:50%" /></a>
 		</div>
 		<div class="span1">
-			<div class="btn-group">
-				<a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">
-					<img alt="gb" src="img/gb.png" />&nbsp;<span class="caret"></span>
-				</a>
-				<ul class="dropdown-menu">
-					<li><a tabindex="-1" href="#"><img alt="no" src="img/no.png" />&nbsp;Norsk</a></li>
-				</ul>
-			</div>
+			<select style="background-color:#EDEDED;color:#000;width:75px;">
+				<option value="Norsk">Norsk</option>
+				<option value="English">English</option>
+			</select>
 		</div>
 		<div class="span3">
-			<form class="well">
-				<input type="text" class="span2" placeholder="Brukernavn" /><br />
-				<input type="password" class="span2" placeholder="Passord" /><br />
+			<form class="well" action="openidlogin?userid=https://www.google.com/accounts/o8/id" method="post">
 				<div class="btn-group">
-				<button class="btn btn-primary btn-small">Logg inn</button>
+					<button class="btn btn-primary btn-large" type="submit">Logg inn med Google</button>
 				</div>
 			</form>
 		</div>

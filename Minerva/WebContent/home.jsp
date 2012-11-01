@@ -7,7 +7,7 @@
 		</div>
 
 		<div class="span6">
-			<img src="img/statue.jpg" height="10">
+			<img src="img/statue.jpg" style="float:right;width:50%;height:50%;">
 		</div>
 
 	</div>
