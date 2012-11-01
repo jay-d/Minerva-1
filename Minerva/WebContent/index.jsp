@@ -46,7 +46,7 @@ BODY {
 		</div>
 		
 		
-		<% //Logg inn feltet endrer seg i forhold til boolean variabelen. 
+		<% //Logg inn feltet endrer seg i forhold til boolean variabelen 
 		boolean login = false;  
 		if (login){%>
 			<%@ include file="login.jsp" %>
