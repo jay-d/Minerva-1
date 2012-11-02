@@ -44,15 +44,13 @@ BODY {
 				</ul>
 			</div>
 		</div>
-		<div class="span3">
-			<form class="well" action="openidlogin?userid=https://www.google.com/accounts/o8/id" method="post">
-				<input type="text" class="span2" placeholder="Brukernavn" /><br />
-				<input type="password" class="span2" placeholder="Passord" /><br />
-				<div class="btn-group">
-				<button class="btn btn-primary btn-small">Logg inn med Google</button>
-				</div>
-			</form>
-		</div>
+	<% //Logg inn feltet endrer seg i forhold til boolean variabelen. 
+		boolean login = false;  
+		if (login){%>
+			<%@ include file="login.jsp" %>
+ 		 <% } else { %>
+ 		  	<%@ include file="logout.jsp" %>
+ 		 <%} %>
 	</div><!-- end ROW -->
   
   <%--	Navigation	--%>
