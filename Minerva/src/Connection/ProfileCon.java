@@ -102,7 +102,7 @@ public class ProfileCon {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 
-		List<User> users = session.createQuery("from user").list();
+		List<User> users = session.createQuery("from User").list();
 		session.getTransaction().commit();  
 		
 

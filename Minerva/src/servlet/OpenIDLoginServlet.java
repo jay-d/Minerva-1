@@ -86,22 +86,22 @@ public class OpenIDLoginServlet extends HttpServlet {
 						country = fetchResp.getAttributeValue("country");
 						language = fetchResp.getAttributeValue("language");
 
-						// Checks if the e-mail exists in the User-table, i.e. if the user
-						// is logging in for the first time. If so, creates a new user.
+						// Checks if the e-mail exists in the User-table. If so,
+						// does login stuff. If not, creates a new user. 
 						List<User> users = ProfileCon.getListOfUsersInDatabase();
 						boolean userExistsInDB = false;
 						
-//						for (int i=0; i<users.size(); i++) {
-//							if (users.get(i).getEmail().equals(email) && users.get(i).getEmail() != null) {
-//								//login stuff happens here
-//								userExistsInDB = true;
-//							}
-//						}
-//						
-//						if (!userExistsInDB) {
-//							//store the new user in DB
-//							ProfileCon.createUser(email, 123578);
-//						}
+						for (int i=0; i<users.size(); i++) {
+							if (users.get(i).getEmail().equals(email) && users.get(i).getEmail() != null) {
+								//login stuff happens here
+								userExistsInDB = true;
+							}
+						}
+						
+						if (!userExistsInDB) {
+							//store the new user in DB
+							ProfileCon.createUser(email, 123578);
+						}
 
 
 
