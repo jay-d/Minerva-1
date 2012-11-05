@@ -11,9 +11,9 @@ public class ProfileCon {
 
 	// lager en user og en profli til brukeren
 	// går forløpig utifra at hver profil bare har en bruker
-	public static void createUser(String email, int thirdPartId) {
+	public static void createUser(String email, int thirdPartId, String firstName, String lastName, String location) {
 
-		Profile profile = createProfile("from user2", "LastName", "Location", "Information");
+		Profile profile = createProfile(firstName, lastName, location, "Information");
 
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();

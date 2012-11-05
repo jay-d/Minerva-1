@@ -16,7 +16,7 @@ public class CreateInserts {
 	}
 
 	private static void createUsers() {
-		ProfileCon.createUser("test45", 567);
+		ProfileCon.createUser("test45", 567, "Ola", "Normann", "NO");
 
 	}
 	
