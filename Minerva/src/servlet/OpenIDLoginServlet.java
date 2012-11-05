@@ -7,6 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.openid4java.association.AssociationException;
 import org.openid4java.consumer.ConsumerException;
 import org.openid4java.consumer.ConsumerManager;
@@ -24,7 +26,6 @@ import org.openid4java.message.ax.FetchResponse;
 
 import Connection.ProfileCon;
 import tables.User;
-import org.hibernate.Session;
 
 /**
  * Servlet implementation class AttexConsumer
@@ -103,10 +104,15 @@ public class OpenIDLoginServlet extends HttpServlet {
 							ProfileCon.createUser(email, 123578, firstname, lastname, country);
 						}
 
-
+						HttpSession session = httpRequest.getSession();
+						session.setAttribute("email", email);
+						session.setAttribute("firstname", firstname);
+						session.setAttribute("lastname", lastname);
+						session.setAttribute("country", country);
+						session.setAttribute("language", language);
 
 						// Sending results to index.jsp
-						httpResponse.sendRedirect("out.jsp?openid=" + verifiedID
+						httpResponse.sendRedirect("index.jsp?openid=" + verifiedID
 								+ "&email= " + email + "&firstname="
 								+ firstname + "&lastname=" + lastname
 								+ "&country=" + country + "&language="
