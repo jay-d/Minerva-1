@@ -26,9 +26,9 @@ public class CreateInserts {
 	}
 	
 	private static void createSubCategories(){
-		CategoryCon.createSubCategory("Java", 1);
-		CategoryCon.createSubCategory("TCP", 2);
-		CategoryCon.createSubCategory("tull", 3);
+		CategoryCon.createSubCategory("C#", 1);
+		CategoryCon.createSubCategory("UDP", 2);
+		CategoryCon.createSubCategory("mer tull", 3);
 	}
 
 	public static void createProfilesEkstra(){

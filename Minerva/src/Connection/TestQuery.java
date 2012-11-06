@@ -14,19 +14,28 @@ public class TestQuery {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		List<SubCategory> list = CategoryCon.getSubCategories(2);
-		
+
+
+
+
+
+		//		List<SubCategory> list = CategoryCon.getSubCategories(2);
+		//		
+		//		System.out.println("");
+		//		for (int i=0; i<list.size(); i++) {
+		//				System.out.println(list.get(i).getName());		
+		//		}
+
+		List<MainCategory> maincat = CategoryCon.getMainCategories();
+
 		System.out.println("");
-		for (int i=0; i<list.size(); i++) {
-				System.out.println(list.get(i).getName());		
+		for (int i=0; i<maincat.size(); i++) {
+			System.out.println("Hovedkategori: " + maincat.get(i).getName());
+			List<SubCategory> subcat = CategoryCon.getSubCategories(i+1);
+			for (int j=0; j<subcat.size(); j++) {
+				System.out.println(subcat.get(j).getName());
+			}
 		}
-		
-//		List<MainCategory> list = CategoryCon.getMainCategories();
-//		
-//		System.out.println("");
-//		for (int i=0; i<list.size(); i++) {
-//				System.out.println(list.get(i).getName());		
-//		}
 
 
 	}
@@ -51,7 +60,7 @@ public class TestQuery {
 		List<MainCategory> result = session.createQuery("from MainCategory").list();
 
 		session.getTransaction().commit();
-		
+
 
 		return result;
 
