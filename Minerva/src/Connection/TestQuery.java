@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Session;
 
 import tables.MainCategory;
+import tables.SubCategory;
 import tables.User;
 
 public class TestQuery {
@@ -13,16 +14,19 @@ public class TestQuery {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		List<MainCategory> maincats = CategoryCon.getMainCategories();
+		List<SubCategory> list = CategoryCon.getSubCategories(2);
+		
 		System.out.println("");
-		//		System.out.println(users.get(0).getEmail());
-
-		for (int i=0; i<maincats.size(); i++) {
-			//	if (maincats.get(i).getEmail().equals("andreasnesheim@gmail.com") && users.get(i).getEmail() != null) {
-				//login stuff happens here
-				System.out.println(maincats.get(i).getName());
-			
+		for (int i=0; i<list.size(); i++) {
+				System.out.println(list.get(i).getName());		
 		}
+		
+//		List<MainCategory> list = CategoryCon.getMainCategories();
+//		
+//		System.out.println("");
+//		for (int i=0; i<list.size(); i++) {
+//				System.out.println(list.get(i).getName());		
+//		}
 
 
 	}
