@@ -81,6 +81,7 @@ public class OpenIDLoginServlet extends HttpServlet {
 					if (authSuccess.hasExtension(AxMessage.OPENID_NS_AX)) {
 						FetchResponse fetchResp = (FetchResponse) authSuccess.getExtension(AxMessage.OPENID_NS_AX);
 
+						System.out.println("openID verifiedID: " + verifiedID);
 						email = fetchResp.getAttributeValue("email");
 						firstname = fetchResp.getAttributeValue("firstname");
 						lastname = fetchResp.getAttributeValue("lastname");
@@ -112,7 +113,7 @@ public class OpenIDLoginServlet extends HttpServlet {
 						session.setAttribute("language", language);
 
 						// Sending results to index.jsp
-						httpResponse.sendRedirect("index.jsp?openid=" + verifiedID
+						httpResponse.sendRedirect("out.jsp?openid=" + verifiedID
 								+ "&email= " + email + "&firstname="
 								+ firstname + "&lastname=" + lastname
 								+ "&country=" + country + "&language="
