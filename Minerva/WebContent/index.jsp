@@ -12,6 +12,7 @@
 <link rel="shortcut icon" href="" />
 <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
 <script src="js/bootstrap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <%
 String contentPage = request.getParameter("page");
 if (contentPage == "" || contentPage == null) {
