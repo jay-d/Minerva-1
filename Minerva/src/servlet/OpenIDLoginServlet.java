@@ -113,7 +113,7 @@ public class OpenIDLoginServlet extends HttpServlet {
 						session.setAttribute("language", language);
 
 						// Sending results to index.jsp
-						httpResponse.sendRedirect("out.jsp?openid=" + verifiedID
+						httpResponse.sendRedirect("index.jsp?openid=" + verifiedID
 								+ "&email= " + email + "&firstname="
 								+ firstname + "&lastname=" + lastname
 								+ "&country=" + country + "&language="
