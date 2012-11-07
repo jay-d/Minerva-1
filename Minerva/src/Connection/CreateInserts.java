@@ -11,26 +11,24 @@ public class CreateInserts {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-	
-		createMainCategories();
+		createSubCategories();
 	}
 	
 	private static void createUsers() {
-		ProfileCon.createUser("test45", 567);
+		ProfileCon.createUser("test45", 567, "Ola", "Normann", "NO");
 
 	}
 	
 	private static void createMainCategories(){
 		CategoryCon.createMainCategory("Programmering");
-		CategoryCon.createMainCategory("Netverk");
-		CategoryCon.createMainCategory("Annet");
+		CategoryCon.createMainCategory("Nettverk");
+		CategoryCon.createMainCategory("Operativsystem");
 	}
 	
 	private static void createSubCategories(){
-		CategoryCon.createSubCategory("Java", 2);
-		CategoryCon.createSubCategory("TCP", 3);
-		CategoryCon.createSubCategory("tull", 4);
-		CategoryCon.createSubCategory("Programmering", 4);
+		CategoryCon.createSubCategory("C#", 1);
+		CategoryCon.createSubCategory("UDP", 2);
+		CategoryCon.createSubCategory("mer tull", 3);
 	}
 
 	public static void createProfilesEkstra(){

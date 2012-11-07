@@ -44,9 +44,9 @@ BODY {
 				</ul>
 			</div>
 		</div>
-	<% //Logg inn feltet endrer seg i forhold til boolean variabelen. 
-		boolean login = false;  
-		if (login){%>
+	<%  // Viser login.jsp hvis email er lagret i session, med andre ord
+		// brukeren er logget inn.
+		if (request.getParameter("email") != null || session.getAttribute("email") != null){%>
 			<%@ include file="login.jsp" %>
  		 <% } else { %>
  		  	<%@ include file="logout.jsp" %>

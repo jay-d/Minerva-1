@@ -11,7 +11,7 @@ import java.util.List;
 import org.hibernate.Session;
 
 public class CategoryCon {
-	
+
 	public static void createMainCategory(String name) {
 
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -19,13 +19,13 @@ public class CategoryCon {
 
 		MainCategory mainCategory = new MainCategory();
 		mainCategory.setName(name);
-		
+
 
 		session.save(mainCategory);
 		session.getTransaction().commit();
 
 	}
-	
+
 	public static void createSubCategory(String name, long mainCategory) {
 
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -40,31 +40,29 @@ public class CategoryCon {
 
 	}
 
-public List<MainCategory> getMainCategories() {
-	
-	
-	Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-    session.beginTransaction();
+	public static List<MainCategory> getMainCategories() {
 
-    List<MainCategory> result = session.createQuery("from MainCategory").list();
 
-    session.getTransaction().commit();
-    session.close();
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
 
-    return result;
-		
+		List<MainCategory> result = session.createQuery("from MainCategory").list();
+
+		session.getTransaction().commit();
+
+		return result;
+
 	}
 
-public List<SubCategory> getSubCategories(int mainCategory) {
-	Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-    session.beginTransaction();
+	public static List<SubCategory> getSubCategories(int mainCategory) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
 
-    List<SubCategory> result = session.createQuery("from SubCategory where mainCategoryID ="+mainCategory+"").list();
+		List<SubCategory> result = session.createQuery("from SubCategory where mainCategoryID =" + mainCategory + "").list();
 
-    session.getTransaction().commit();
-    session.close();
+		session.getTransaction().commit();
 
-    return result;
-}
+		return result;
+	}
 }
 
