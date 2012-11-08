@@ -12,6 +12,7 @@
 <link rel="shortcut icon" href="" />
 <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
 <script src="js/bootstrap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <%
 String contentPage = request.getParameter("page");
 if (contentPage == "" || contentPage == null) {
@@ -44,11 +45,17 @@ BODY {
 				</ul>
 			</div>
 		</div>
+<<<<<<< HEAD
 		
 		
 		<% //Logg inn feltet endrer seg i forhold til boolean variabelen 
 		boolean login = false;  
 		if (login){%>
+=======
+	<%  // Viser login.jsp hvis email er lagret i session, med andre ord
+		// brukeren er logget inn.
+		if (request.getParameter("email") != null || session.getAttribute("email") != null){%>
+>>>>>>> 7d13bd065d0cc984f21dcd253632aebff6194fc7
 			<%@ include file="login.jsp" %>
  		 <% } else { %>
  		  	<%@ include file="logout.jsp" %>

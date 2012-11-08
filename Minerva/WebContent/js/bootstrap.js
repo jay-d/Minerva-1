@@ -1,5 +1,4 @@
 /* ===================================================
-<<<<<<< HEAD
  * bootstrap-transition.js v2.1.1
  * http://twitter.github.com/bootstrap/javascript.html#transitions
  * ===================================================
@@ -3763,4 +3762,3 @@
   })
 
 }( window.jQuery );
-//>>>>>>> branch 'master' of https://github.com/andreasnesheim/Minerva.git

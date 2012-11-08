@@ -7,6 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.openid4java.association.AssociationException;
 import org.openid4java.consumer.ConsumerException;
 import org.openid4java.consumer.ConsumerManager;
@@ -21,6 +23,9 @@ import org.openid4java.message.ParameterList;
 import org.openid4java.message.ax.AxMessage;
 import org.openid4java.message.ax.FetchRequest;
 import org.openid4java.message.ax.FetchResponse;
+
+import Connection.ProfileCon;
+import tables.User;
 
 /**
  * Servlet implementation class AttexConsumer
@@ -76,19 +81,39 @@ public class OpenIDLoginServlet extends HttpServlet {
 					if (authSuccess.hasExtension(AxMessage.OPENID_NS_AX)) {
 						FetchResponse fetchResp = (FetchResponse) authSuccess.getExtension(AxMessage.OPENID_NS_AX);
 
+						System.out.println("openID verifiedID: " + verifiedID);
 						email = fetchResp.getAttributeValue("email");
 						firstname = fetchResp.getAttributeValue("firstname");
 						lastname = fetchResp.getAttributeValue("lastname");
 						country = fetchResp.getAttributeValue("country");
 						language = fetchResp.getAttributeValue("language");
+
+						// Checks if the e-mail exists in the User-table. If so,
+						// does login stuff. If not, creates a new user. 
+						List<User> users = ProfileCon.getListOfUsersInDatabase();
+						boolean userExistsInDB = false;
 						
-						// Checks if the e-mail exists in the User-table, i.e. if the user
-						// is logging in for the first time. If so, creates a new user.
+						for (int i=0; i<users.size(); i++) {
+							if (users.get(i).getEmail().equals(email) && users.get(i).getEmail() != null) {
+								//login stuff happens here
+								userExistsInDB = true;
+							}
+						}
 						
-						
+						if (!userExistsInDB) {
+							//store the new user in DB
+							ProfileCon.createUser(email, 123578, firstname, lastname, country);
+						}
+
+						HttpSession session = httpRequest.getSession();
+						session.setAttribute("email", email);
+						session.setAttribute("firstname", firstname);
+						session.setAttribute("lastname", lastname);
+						session.setAttribute("country", country);
+						session.setAttribute("language", language);
 
 						// Sending results to index.jsp
-						httpResponse.sendRedirect("out.jsp?openid=" + verifiedID
+						httpResponse.sendRedirect("index.jsp?openid=" + verifiedID
 								+ "&email= " + email + "&firstname="
 								+ firstname + "&lastname=" + lastname
 								+ "&country=" + country + "&language="
